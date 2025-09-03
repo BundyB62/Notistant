@@ -2,14 +2,13 @@ import React, { useState, useCallback, useMemo } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
-import { TouchableOpacity, Platform } from 'react-native';
+import { TouchableOpacity, Platform, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import './global.css';
 
-import SplashScreen from './src/components/SplashScreen';
-import DashboardScreen from './src/screens/DashboardScreen';
-import NotesScreen from './src/screens/NotesScreen';
-import CalendarScreen from './src/screens/CalendarScreen';
+import SplashScreen from './src/components/SplashScreen.simple';
+import DashboardScreen from './src/screens/DashboardScreen.simple';
+import NotesScreen from './src/screens/NotesScreen.enhanced';
+import CalendarScreen from './src/screens/CalendarScreen.simple';
 
 const Tab = createBottomTabNavigator();
 
@@ -59,7 +58,7 @@ export default function App() {
     },
     headerRight: () => (
       <TouchableOpacity
-        className="mr-4 p-2 rounded-lg active:bg-background-muted"
+        style={{ marginRight: 16, padding: 8 }}
         onPress={() => console.log('Settings pressed')}
         activeOpacity={0.7}
       >

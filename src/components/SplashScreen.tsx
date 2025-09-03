@@ -1,17 +1,12 @@
 import React, { useEffect } from 'react';
-import { View, Text, Dimensions } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Animated, { 
   useSharedValue, 
   useAnimatedStyle, 
   withTiming, 
   withSequence,
-  withSpring,
-  interpolate,
   runOnJS
 } from 'react-native-reanimated';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons } from '@expo/vector-icons';
-import '../../global.css';
 
 interface SplashScreenProps {
   onFinish: () => void;
